@@ -14,10 +14,14 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.define "kali" do |kali|
     kali.vm.box = "kalilinux/rolling"
+    kali.vm.network "private_network", :type => 'dhcp', :virtualbox__intnet=>true, :adapter => 2, :ip=>"192.168.33.10"
+    kali.vm.hostname = "Kali"
   end
 
   config.vm.define "ubuntu" do |ubuntu|
     ubuntu.vm.box = "ubuntu/impish64"
+    ubuntu.vm.network "private_network", :type => 'dhcp',  :virtualbox__intnet=>true, :adapter => 2, :ip=>"192.168.33.11"
+    ubuntu.vm.hostname = "Ubuntu"
   end
 
   # Disable automatic box update checking. If you disable this, then
