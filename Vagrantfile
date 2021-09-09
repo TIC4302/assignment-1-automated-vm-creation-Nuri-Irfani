@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "ubuntu" do |ubuntu|
-    ubuntu.vm.box = "ubuntu/trusty64"
+    ubuntu.vm.box = "ubuntu/impish64"
   end
 
   # Disable automatic box update checking. If you disable this, then
